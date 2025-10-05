@@ -1,0 +1,14 @@
+# По умолчанию все текстовые файлы
+* text=auto eol=lf
+
+# Windows-скрипты
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Бинарные файлы (не трогаем переводы строк)
+*.jpg binary
+*.png binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.exe binary
