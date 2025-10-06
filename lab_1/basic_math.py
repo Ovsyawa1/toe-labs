@@ -18,7 +18,12 @@ def my_mult(a, b):
 
 @with_two_numbers
 def my_div(a, b):
-    return a / b
+    try:
+        result = a / b
+    except ZeroDivisionError as e:
+        print(f"Обнаружено деление на 0! Ошибка: {e}")
+    else:
+        return result
 
 
 @with_two_numbers

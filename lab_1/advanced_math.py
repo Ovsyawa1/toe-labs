@@ -19,7 +19,12 @@ def my_tan(a):
 
 @with_one_number
 def my_ctg(a):
-    return 1/tan(radians(a))
+    try:
+        result = 1 / tan(radians(a))
+    except ZeroDivisionError as e:
+        print(f"Обнаружено деление на 0! Ошибка: {e}")
+    else:
+        return result
 
 
 @with_one_number
@@ -29,11 +34,19 @@ def my_factorial(a):
 
 @with_one_number
 def my_ln(a):
-    return log(a)
+    try:
+        result = log(a)
+    except ValueError as e:
+        print(f"Логарифма с аргументов {a} не существует! Ошибка: {e}")
+    else:
+        return result
 
 
 @with_two_numbers
 def my_gcd_and_lcm(a: float, b: float):
+    # Надо взять модуль для расчетов НОД и НОК
+    a = abs(a)
+    b = abs(b)
     answer = list()
     if (not a.is_integer()) or (not b.is_integer()):
         print("Обнаружена дробная часть, числа автоматически переделаны \
@@ -72,9 +85,9 @@ def convert_base():
             )
             to_base = int(input("Введите в какую систему \
 счисления перевести: "))
-        except ValueError as e:
+        except (ValueError, UnboundLocalError) as e:
             print(f"Произошла ошибка {e}. Все числа должны быть целыми, \
-либо числа {n} не существует в системе счисления {from_base}")
+либо введенного числа не существует в системе счисления {from_base}")
             continue
         else:
             break
@@ -86,17 +99,15 @@ def convert_base():
 
 
 def find_square():
-    while True:
-        try:
-            n = int(input("Введите число сторон: "))
-            a = float(input("Введите длину одно стороны: "))
-        except ValueError as e:
-            print(f"Произошла ошибка {e}. Вводите числа")
-        else:
-            break
-
-    square = n * a * a / 4 * (1 / tan(radians(180 / n)))
-    return square
+    try:
+        n = int(input("Введите число сторон: "))
+        a = float(input("Введите длину одно стороны: "))
+    except ValueError as e:
+        print(f"Произошла ошибка {e}. Вводите числа")
+        return None
+    else:
+        square = n * a * a / 4 * (1 / tan(radians(180 / n)))
+        return square
 
 
 def solve_equation():
@@ -112,15 +123,15 @@ def solve_equation():
         else:
             break
 
-    D = b * b - 4 * a * c
+    D = b ** 2 - 4 * a * c
     if D < 0:
         real = -b / (2 * a)
         imaginary = sqrt(-D) / (2 * a)
         x1 = complex(real, imaginary)
         x2 = complex(real, -imaginary)
     else:
-        x1 = -b + sqrt(D) / (2 * a)
-        x2 = -b - sqrt(D) / (2 * a)
+        x1 = (-b + sqrt(D)) / (2 * a)
+        x2 = (-b - sqrt(D)) / (2 * a)
 
     if x1 == x2:
         return x1
