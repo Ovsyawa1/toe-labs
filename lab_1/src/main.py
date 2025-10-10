@@ -1,10 +1,10 @@
-from globals import print_error_message, START_MESSAGE
-from basic_math import my_sum, my_sub, my_mult, my_div, my_raise
-from advanced_math import (
+from .globals import print_error_message, START_MESSAGE
+from .basic_math import my_sum, my_sub, my_mult, my_div, my_raise
+from .advanced_math import (
     my_sin, my_cos, my_tan, my_ctg, my_factorial, my_ln,
     my_gcd_and_lcm, convert_base, find_square, solve_equation
 )
-from bitwise_operations import (
+from .bitwise_operations import (
     bitwise_and, bitwise_or, bitwise_xor, bitwise_not,
     bitwise_to_left, bitwise_to_right
 )

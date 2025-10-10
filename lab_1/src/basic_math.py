@@ -1,4 +1,4 @@
-from decorators import with_two_numbers
+from .decorators import with_two_numbers
 
 
 @with_two_numbers

@@ -1,7 +1,7 @@
 import io
 import math
 import pytest
-import basic_math as bm
+import lab_1.src.basic_math as bm
 
 
 class TestMySum:

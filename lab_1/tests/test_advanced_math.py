@@ -1,7 +1,7 @@
 import io
 import math
 import pytest
-import advanced_math as am
+import lab_1.src.advanced_math as am
 from math import isclose, sin, cos, tan, radians, log
 
 

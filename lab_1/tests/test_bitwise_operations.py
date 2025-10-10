@@ -1,7 +1,7 @@
 import io
 import math
 import pytest
-import bitwise_operations as bo
+import lab_1.src.bitwise_operations as bo
 
 
 class TestBitwiseAnd:

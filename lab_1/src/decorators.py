@@ -1,4 +1,4 @@
-from globals import print_error_message
+from .globals import print_error_message
 
 
 def create_two_numbers():

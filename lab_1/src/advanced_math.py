@@ -1,5 +1,5 @@
 from math import factorial, log, sin, cos, sqrt, tan, radians
-from decorators import with_two_numbers, with_one_number
+from .decorators import with_two_numbers, with_one_number
 
 
 @with_one_number
