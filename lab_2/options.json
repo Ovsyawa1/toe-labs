@@ -1,0 +1,10 @@
+{
+    "R": 1000,
+    "L": 10,
+    "C": 1e-4,
+    "U": 220,
+    "frequencies": {
+        "lower_limit": 100,
+        "upper_limit": 1000
+    }
+}
