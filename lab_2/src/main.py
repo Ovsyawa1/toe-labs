@@ -70,9 +70,9 @@ def all_calc(csv_path, logger, lower_freq_limit, upper_freq_limit, calculator):
 
 
 def main():
+    Path("lab_2", "output").mkdir(parents=True, exist_ok=True)
     logger = setup_log()
     logger.info("Инициализация переменных")
-
     file_path = Path("lab_2", "options.json")
     csv_path = Path("lab_2", "output", "output.csv")
     parameters = load_options(file_path)
