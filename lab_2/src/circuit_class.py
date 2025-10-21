@@ -60,6 +60,7 @@ class CircuitCalculator(AbstractCalculator):
             self.r_resistance**2 + (self.l_resistance - self.c_resistance)**2
         )
         if abs(self.l_resistance - self.c_resistance) < 1e-6:
+            print(f"Обнаружен резонанс на частоте {self.frequency}")
             logger.info(
                 f"Обнаружен резонанс! Текущая частота {self.frequency}"
             )
