@@ -5,7 +5,7 @@ my_list = LinkedList()
 
 for i in range(4):
     my_list.add_to_tail(i)
-    
+
 print(my_list)
 print(my_list[2])
 
