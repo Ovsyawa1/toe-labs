@@ -7,13 +7,14 @@ from characters_classes import Saber
 
 def main(stdscr: curses.window):
     member_1 = Saber("Arhuria")
-    stats_text = f"{member_1.name} Stats: \
+    stats_text = f"{member_1.name} Stats: \n\
 {member_1.health} HP | \
 {member_1.defence} DEF | \
 {member_1.damage} DMG\n\
 {member_1.strength} STR | \
 {member_1.agility} AGL | \
-{member_1.intelligence} INT"
+{member_1.intelligence} INT | \
+{member_1.faith} FTH"
 
     stats_window = curses.newwin(4, 80, 20, 0)
 
