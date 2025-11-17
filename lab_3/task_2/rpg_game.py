@@ -2,7 +2,7 @@ import curses
 from curses import wrapper
 import time
 
-from lab_3.task_2.chars_classes import Saber
+from chars_classes import Saber
 
 
 def main(stdscr: curses.window):

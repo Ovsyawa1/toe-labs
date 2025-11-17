@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List
 from abstract_unit import Unit, Ability, Character
 
 
@@ -7,9 +7,9 @@ class Dia(Ability):
         super().__init__("Dia")
 
     def execute(self, user: 'Character',
-                target: Optional[Unit] = None, **kwargs):
+                target: Unit = None, **kwargs):
         heal_target = target if target is not None else user
-        heal_amount = heal_target.faith * 5 + 1
+        heal_amount = user.faith * 5 + 1
         heal_target.health += heal_amount
         print(
             f"[{self.name}] {user.name} "
@@ -78,7 +78,7 @@ class Thermopylae(Ability):
         target.faith += buff_amount
         print(
             f"[{self.name}] {user.name} "
-            f"баффает все статы {target.name} на {buff_amount}."
+            f"усиляет все характеристики {target.name} на {buff_amount}."
         )
 
 

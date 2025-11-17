@@ -1,5 +1,5 @@
 from abstract_unit import Character
-from characters_classes import abl_dict
+from abilities_classes import abl_dict
 
 
 class Saber(Character):
