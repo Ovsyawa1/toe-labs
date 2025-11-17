@@ -2,7 +2,7 @@ import curses
 from curses import wrapper
 import time
 
-from characters_classes import Saber
+from lab_3.task_2.chars_classes import Saber
 
 
 def main(stdscr: curses.window):
@@ -21,7 +21,7 @@ def main(stdscr: curses.window):
     for i in range(10):
         stdscr.clear()
         stdscr.addstr(f"Hello, World! {i}")
-        stdscr.refresh() 
+        stdscr.refresh()
 
         stats_window.clear()
         stats_window.addstr(stats_text)

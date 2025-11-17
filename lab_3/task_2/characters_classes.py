@@ -11,8 +11,10 @@ class Dia(Ability):
         heal_target = target if target is not None else user
         heal_amount = heal_target.faith * 5 + 1
         heal_target.health += heal_amount
-        print(f"[{self.name}] {user.name} \
-исцеляет {heal_target.name} на {heal_amount} HP.")
+        print(
+            f"[{self.name}] {user.name} "
+            f"исцеляет {heal_target.name} на {heal_amount} HP."
+        )
 
 
 class Agi(Ability):
@@ -106,80 +108,3 @@ abl_dict = {
     'thermopylae': Thermopylae,
     'marakunda': Marakunda
 }
-
-
-class Saber(Character):
-    def __init__(self, name: str):
-        # Хардкодированные статы Saber
-        health = 120
-        damage = 10
-        defence = 5
-        strength = 5
-        intelligence = 2
-        agility = 2
-        faith = 4
-
-        # Передаем все статы в конструктор Character/Unit
-        super().__init__(name, health, damage, defence,
-                         strength, intelligence, agility, faith)
-
-        # Умения: Dia, Rakukaja
-        self.abilities = [abl_dict['dia'](), abl_dict['rakukaja']()]
-
-
-class Assassin(Character):
-    def __init__(self, name: str):
-        # Хардкодированные статы Assassin
-        health = 90
-        damage = 12
-        defence = 3
-        strength = 4
-        intelligence = 1
-        agility = 7
-        faith = 1
-
-        super().__init__(name, health, damage, defence,
-                         strength, intelligence, agility, faith)
-
-        # Умения: Cleave
-        self.abilities = [abl_dict['cleave']()]
-
-
-class Caster(Character):
-    def __init__(self, name: str):
-        # Хардкодированные статы Caster
-        health = 80
-        damage = 8
-        defence = 4
-        strength = 1
-        intelligence = 8
-        agility = 3
-        faith = 3
-
-        super().__init__(name, health, damage, defence,
-                         strength, intelligence, agility, faith)
-
-        # Умения: Agi, Dia, Marakunda
-        self.abilities = [
-            abl_dict['agi'](),
-            abl_dict['dia'](),
-            abl_dict['marakunda']()
-        ]
-
-
-class Support(Character):
-    def __init__(self, name: str):
-        # Хардкодированные статы Support
-        health = 110
-        damage = 7
-        defence = 6
-        strength = 2
-        intelligence = 3
-        agility = 2
-        faith = 7
-
-        super().__init__(name, health, damage, defence,
-                         strength, intelligence, agility, faith)
-
-        # Умения: Thermopylae, Marakunda
-        self.abilities = [abl_dict['thermopylae'](), abl_dict['marakunda']()]

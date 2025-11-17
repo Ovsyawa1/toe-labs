@@ -1,6 +1,5 @@
-# --- Инициализация ---
-from characters_classes import Saber, Caster, Support
 from abstract_unit import Enemy
+from chars_classes import Saber, Caster, Support
 
 
 saber_arturia = Saber("Артурия")
@@ -10,8 +9,6 @@ support_merlin = Support("Мерлин")
 goblin_1 = Enemy("Гоблин А", health=30, damage=5, defence=2)
 goblin_2 = Enemy("Гоблин Б", health=30, damage=5, defence=2)
 enemy_list = [goblin_1, goblin_2]
-
-# --- Боевой цикл ---
 
 print(
     f"Name: {saber_arturia.name} | Health: {saber_arturia.health} | "
